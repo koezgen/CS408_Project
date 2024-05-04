@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -100,11 +101,12 @@ namespace Project_Server
         Dictionary<string, PlayerAttributes> queue = new Dictionary<string, PlayerAttributes>();
 
         Dictionary<string, int> leaderboard = new Dictionary<string, int>();
+        OrderedDictionary clientsDict = new OrderedDictionary();
 
         // 1 indicates that username already exists on the server.
         private string errorMessage1 = "1";
 
-        // 2 indicates that server was terminated.
+        // 2 indicates that server x.
         private string errorMessage2 = "2";
 
         Byte[] welcomeMessage = Encoding.Default.GetBytes("Welcome to the Rock-Paper-Scissors game server!\n");
@@ -118,6 +120,8 @@ namespace Project_Server
 
         bool active_game = false;
         bool connected = true;
+
+        
 
         private void Form1_FormClosing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -162,8 +166,37 @@ namespace Project_Server
             {
                 foreach (var item in clients.Keys)
                 {
-                    clients[item].Socket.Send(Encoding.Default.GetBytes("Waiting for players: (" + active_player.ToString() + "/4)"));
+                    clients[item].Socket.Send(Encoding.Default.GetBytes("Waiting for players: (" + active_player.ToString() + "/4)\n"));
                 }
+            }
+        }
+
+        private void sendWelcomeMessage()
+        {
+            if (active_player == 4 && !active_game)
+            {
+                foreach (var item in clients.Keys)
+                {
+                    clients[item].Socket.Send(Encoding.Default.GetBytes("Welcome to Rock/Paper/Scissors" +  "!!!\n"));
+                    clients[item].Socket.Send(Encoding.Default.GetBytes("The game will start soon...\n"));
+                    
+                }
+            }
+        }
+
+        private async void sendTimer()
+        {
+            for (int i = 1; i <= 5; i++)
+            {
+                foreach (var item in clients.Keys)
+                {
+                    clients[item].Socket.Send(Encoding.Default.GetBytes($"{i}"));
+                }
+                await Task.Delay(1000);  // Asynchronously wait for 1 second
+            }
+            foreach (var item in clients.Keys)
+            {
+                clients[item].Socket.Send(Encoding.Default.GetBytes("The Game is started!!!"));
             }
         }
 
@@ -202,6 +235,7 @@ namespace Project_Server
                                                 active_player++;
                                                 PlayerAttributes attr = new PlayerAttributes(thisClient, 0);
                                                 clients.Add(usr, attr);
+                                                clientsDict[usr] = attr;
                                                 leaderboard.Add(usr, 0);
                                                 logs.AppendText(usr + " joined.\n");
 
@@ -212,10 +246,12 @@ namespace Project_Server
 
                                                 if (active_player == 4)
                                                 {
+                                                    sendWelcomeMessage();
+                                                    sendTimer();
                                                     active_game = true;
                                                 }
                                             }
-
+                                            
                                             else
                                             {
                                                 queue_player++;
@@ -263,10 +299,10 @@ namespace Project_Server
                         Byte[] bufferClient = Encoding.Default.GetBytes(errorMessage1);
                         thisClient.Send(bufferClient);
                         logs.AppendText("Username already exists!\n");
-                        thisClient.Close();
+                        //thisClient.Close();
                     }
 
-                    connected = false;
+                    //connected = false;
                 }
             }
         }
@@ -324,6 +360,11 @@ namespace Project_Server
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

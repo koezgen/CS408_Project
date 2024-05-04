@@ -113,7 +113,7 @@ namespace Project_Client
                         if (messageCode == 1)
                         {
                             logs.AppendText("Username " + username + " is already taken.\n");
-                            clientSocket.Close();
+                            //clientSocket.Close();
                         }
                     }
 
@@ -128,8 +128,9 @@ namespace Project_Client
                 }
 
                 catch (Exception ex) 
-                { 
-                    logs.AppendText(ex.ToString());
+                {
+                    logs.AppendText("There has been issue about IP or Port No\n");
+                    //logs.AppendText(ex.ToString());
                 }
             }
 
@@ -137,6 +138,11 @@ namespace Project_Client
             {
                 logs.AppendText("Check the port\n");
             }
+        }
+
+        private void logs_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

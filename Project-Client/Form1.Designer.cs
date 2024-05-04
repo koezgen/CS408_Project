@@ -44,9 +44,10 @@
             // 
             // button_connect
             // 
-            this.button_connect.Location = new System.Drawing.Point(46, 166);
+            this.button_connect.Location = new System.Drawing.Point(61, 204);
+            this.button_connect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_connect.Name = "button_connect";
-            this.button_connect.Size = new System.Drawing.Size(185, 23);
+            this.button_connect.Size = new System.Drawing.Size(247, 28);
             this.button_connect.TabIndex = 0;
             this.button_connect.Text = "Connect to Server";
             this.button_connect.UseVisualStyleBackColor = true;
@@ -54,59 +55,66 @@
             // 
             // textBox_IP
             // 
-            this.textBox_IP.Location = new System.Drawing.Point(115, 57);
+            this.textBox_IP.Location = new System.Drawing.Point(153, 70);
+            this.textBox_IP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_IP.Name = "textBox_IP";
-            this.textBox_IP.Size = new System.Drawing.Size(116, 20);
+            this.textBox_IP.Size = new System.Drawing.Size(153, 22);
             this.textBox_IP.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 60);
+            this.label1.Location = new System.Drawing.Point(57, 74);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(77, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Server IP    :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 90);
+            this.label2.Location = new System.Drawing.Point(57, 111);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.Size = new System.Drawing.Size(73, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Port            : ";
             // 
             // textBox_Port
             // 
-            this.textBox_Port.Location = new System.Drawing.Point(115, 87);
+            this.textBox_Port.Location = new System.Drawing.Point(153, 107);
+            this.textBox_Port.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_Port.Name = "textBox_Port";
-            this.textBox_Port.Size = new System.Drawing.Size(116, 20);
+            this.textBox_Port.Size = new System.Drawing.Size(153, 22);
             this.textBox_Port.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 130);
+            this.label3.Location = new System.Drawing.Point(57, 160);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.Size = new System.Drawing.Size(82, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Username  : ";
             // 
             // textBox_Username
             // 
-            this.textBox_Username.Location = new System.Drawing.Point(115, 127);
+            this.textBox_Username.Location = new System.Drawing.Point(153, 156);
+            this.textBox_Username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_Username.Name = "textBox_Username";
-            this.textBox_Username.Size = new System.Drawing.Size(116, 20);
+            this.textBox_Username.Size = new System.Drawing.Size(153, 22);
             this.textBox_Username.TabIndex = 6;
             // 
             // button_rock
             // 
             this.button_rock.Enabled = false;
             this.button_rock.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.button_rock.Location = new System.Drawing.Point(337, 240);
+            this.button_rock.Location = new System.Drawing.Point(449, 295);
+            this.button_rock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_rock.Name = "button_rock";
-            this.button_rock.Size = new System.Drawing.Size(54, 47);
+            this.button_rock.Size = new System.Drawing.Size(72, 58);
             this.button_rock.TabIndex = 8;
             this.button_rock.Text = "🪨";
             this.button_rock.UseVisualStyleBackColor = true;
@@ -115,9 +123,10 @@
             // 
             this.button_paper.Enabled = false;
             this.button_paper.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.button_paper.Location = new System.Drawing.Point(415, 240);
+            this.button_paper.Location = new System.Drawing.Point(553, 295);
+            this.button_paper.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_paper.Name = "button_paper";
-            this.button_paper.Size = new System.Drawing.Size(54, 47);
+            this.button_paper.Size = new System.Drawing.Size(72, 58);
             this.button_paper.TabIndex = 9;
             this.button_paper.Text = "📃";
             this.button_paper.UseVisualStyleBackColor = true;
@@ -126,9 +135,10 @@
             // 
             this.button_scissors.Enabled = false;
             this.button_scissors.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.button_scissors.Location = new System.Drawing.Point(495, 242);
+            this.button_scissors.Location = new System.Drawing.Point(660, 298);
+            this.button_scissors.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_scissors.Name = "button_scissors";
-            this.button_scissors.Size = new System.Drawing.Size(54, 45);
+            this.button_scissors.Size = new System.Drawing.Size(72, 55);
             this.button_scissors.TabIndex = 10;
             this.button_scissors.Text = "✂️";
             this.button_scissors.UseVisualStyleBackColor = true;
@@ -136,27 +146,30 @@
             // button_leave_game
             // 
             this.button_leave_game.Enabled = false;
-            this.button_leave_game.Location = new System.Drawing.Point(679, 242);
+            this.button_leave_game.Location = new System.Drawing.Point(905, 298);
+            this.button_leave_game.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_leave_game.Name = "button_leave_game";
-            this.button_leave_game.Size = new System.Drawing.Size(128, 45);
+            this.button_leave_game.Size = new System.Drawing.Size(171, 55);
             this.button_leave_game.TabIndex = 12;
             this.button_leave_game.Text = "Leave Game";
             this.button_leave_game.UseVisualStyleBackColor = true;
             // 
             // logs
             // 
-            this.logs.Location = new System.Drawing.Point(303, 37);
+            this.logs.Location = new System.Drawing.Point(404, 46);
+            this.logs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.logs.Name = "logs";
             this.logs.ReadOnly = true;
-            this.logs.Size = new System.Drawing.Size(527, 182);
+            this.logs.Size = new System.Drawing.Size(701, 223);
             this.logs.TabIndex = 13;
             this.logs.Text = "";
+            this.logs.TextChanged += new System.EventHandler(this.logs_TextChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 315);
+            this.ClientSize = new System.Drawing.Size(1143, 388);
             this.Controls.Add(this.logs);
             this.Controls.Add(this.button_leave_game);
             this.Controls.Add(this.button_scissors);
@@ -169,6 +182,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_IP);
             this.Controls.Add(this.button_connect);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
